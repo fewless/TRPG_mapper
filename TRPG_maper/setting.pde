@@ -136,9 +136,10 @@ void statusDraw() {
   statusBar.fill(0);
   statusBar.textAlign(LEFT,TOP);
   statusBar.text("Group", 10, 0);
-  statusBar.text("AREA", 100, 0);
-  statusBar.text("PIECE", 150, 0);
-  statusBar.text("Room", 250, 0);
+  statusBar.text("Field", 170, 0);
+  statusBar.line(220,0,220,30);
+  statusBar.strokeWeight(2);
+  statusBar.line(160,0,160,30);
   statusBar.endDraw();
 }
 

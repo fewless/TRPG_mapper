@@ -21,9 +21,11 @@ void mousePressed() {
     mousePress2();
     break;
   case 2:
-    
     break;
   }
+  
+  //always mouse process
+  anytimeMouse();
 }
 
 

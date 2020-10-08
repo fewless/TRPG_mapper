@@ -51,8 +51,7 @@ void setup() {
 int positionDelay=0;//なぜか2フレーム遅れて座標更新なのでカウント用
 void draw() {
   background(200);
-  
-  if (positionDelay>=1) {//読み込み
+  if (positionDelay>=1) {//画像の読み込み
     if (positionDelay>=3) {
       for (int i=0;i<images.size();i++)//ディレイ後に正式に追加
         if (images.get(i).getNull())//処理前なら
@@ -93,6 +92,7 @@ void draw() {
   if(groupKillSwitch)cleanGroups();//グループのお掃除
   
   image(statusBar,0,0);
+  nemuBarProcess();
 }
 
 void keyPressed() {//セーブ作る
@@ -105,4 +105,6 @@ void keyPressed() {//セーブ作る
     keyPress3();
     break;
   }
+  
+  keyAnytime();
 }

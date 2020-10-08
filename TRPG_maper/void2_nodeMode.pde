@@ -16,7 +16,6 @@ void nodeMode() {
           break;
         case 1://削除モード
           if (images.get(activate.get(k)).alreadyHas(i)) {
-            println("remove");
             drawArrow(images.get(activate.get(k)).midX(), 
               images.get(activate.get(k)).midY(), 
               images.get(i).midX(), 
@@ -63,7 +62,6 @@ void mousePress2() {
         for (int k = 0; k<activate.size(); k++) {
           if (activate.get(k) != i)//相手が自分じゃない
             if (images.get(activate.get(k)).alreadyHas(images.get(i).getID())) {//ノードが存在していない
-              println(images.get(i).getID());
               images.get(activate.get(k)).removeNode(images.get(i).getID());//id取得して追加
             }
         }

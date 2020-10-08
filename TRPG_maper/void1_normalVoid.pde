@@ -6,6 +6,7 @@ void normalVoid(){//通常状態
       Dy = mouseY;
     }
     noFill();
+    stroke(255);
     rect(Dx, Dy, mouseX, mouseY);
     for (ImageHolder i : images)
       if (i.inBox(mouseX, mouseY, Dx, Dy)) {
@@ -121,18 +122,20 @@ void mousePress1(){
           break;
         }
       }
-      if(activate.size()==0 && activeGroup == -1){//画像が非アクティブで選択中でない
+      if(activate.size()==0 && activeGroup == -1 && groupActive){//画像が非アクティブで選択中でない
         for(int i=0;i<imageGroups.size();i++){
           if(imageGroups.get(i).onMouse(mouseX,mouseY)){
             activate.clear();
-            for(int k=0;k<imageGroups.get(i).getList().size();k++)//グループメンバーを追加
-              if(images.get(k).noActivate())activate.add(imageGroups.get(i).getList().get(k));
+            for(int k=0;k<imageGroups.get(i).getList().size();k++){//グループメンバーを追加
+              //if(images.get(k).noActivate())
+              activate.add(images.indexOf(images.get(searchImageFromID(imageGroups.get(i).getList().get(k)))));
+            }
             preX = mouseX;
             preY = mouseY;
             imageMove = true;
             imageClicked = true;
             activeGroup = i;//アクティブにする
-            break;
+            if(activate.size()>1)break;
           }
         }
       }

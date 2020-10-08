@@ -12,6 +12,7 @@ class Group {
   Group(ArrayList<Integer> ls) {
     addMember(ls);
     gName = "default";
+    println("makeGroup=="+list.size());
   }
 
   void addMember(ArrayList<Integer> ls) {//4activate
@@ -109,6 +110,7 @@ class Group {
       rect((upperX+bottomX)/2 - 7*gName.length()/2, upperY-1 , (upperX+bottomX)/2 + 7*gName.length()/2 ,upperY - 15);
       textAlign(CENTER);
       fill(0);
+      textSize(12);
       text(gName,(upperX+bottomX)/2, upperY-4);
       textAlign(LEFT);
       XU = upperX;YU = upperY;XB=bottomX;YB=bottomY;
@@ -120,7 +122,7 @@ class Group {
 
 
 void cleanGroups(){//必要ないグループのお掃除
-  for(int i=imageGroups.size()-1;i>0;i--){
+  for(int i=imageGroups.size()-1;i>=0;i--){
     if(imageGroups.get(i).getSize()<=1)
       imageGroups.remove(i);
   }

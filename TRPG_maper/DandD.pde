@@ -93,7 +93,7 @@ class ImageHolder {
   String name;//画像の名前
   int ID;//管理用番号
   int group;//画像グループ
-  int layer;//画像レイヤー
+  int layer;//画像レイヤー 0:エリア 1:コマ
   ArrayList<ImageNode> nodes=new ArrayList<ImageNode>();//こいつが持ってるノード
 
 
@@ -258,7 +258,7 @@ class ImageHolder {
 }
 
 
-class ImageNode {/////////////////////////////////////////////////////////////////////////////////////////////////////
+class ImageNode {//画像間のノード
   int objective;//目標id
   int polarity;//極性　0：一方　1：双方
   int restriction;//制限　0：制限ナシ　1～：必要No
